@@ -1,0 +1,35 @@
+<p>blogcomp works!</p>
+<div>
+    <div>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" [(ngModel)]="title" required  #nombreInput="ngModel" />
+        <div *ngIf="nombreInput.invalid && nombreInput.touched" class="error">
+          Por favor ingrese un nombre.
+        </div>
+    
+    </div>
+    <div>
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" [(ngModel)]="atext" required #textoInput="ngModel" />
+    </div>
+    <div>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" [(ngModel)]="afecha" required #fechaInput="ngModel"/>
+    </div>
+    <div>
+        <label for="dir">URL:</label>
+        <input type="url" id="dir" [(ngModel)]="aurl" required #urlInput="ngModel"/>
+    </div>
+    <button (click)=guardar() *ngIf="!nombreInput.invalid && !textoInput.invalid && !fechaInput.invalid && !urlInput.invalid" >Guardar</button>
+
+   
+</div>
+<div>
+    <article *ngFor="let article of arrArticles">
+        <h3>{{article.titulo}}</h3>
+        <p>{{article.texto}}</p>
+        <p>{{article.fecha}}</p>
+        <img [src]="article.url">
+
+    </article>
+</div>
