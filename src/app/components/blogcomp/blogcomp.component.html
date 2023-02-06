@@ -1,35 +1,40 @@
-<p>blogcomp works!</p>
-<div>
-    <div>
+<div class="header">
+    <h2>Carga de artículo</h2>
+    <div class="bloque">
         <label for="titulo">Título:</label>
-        <input type="text" id="titulo" [(ngModel)]="title" required  #nombreInput="ngModel" />
-        <div *ngIf="nombreInput.invalid && nombreInput.touched" class="error">
-          Por favor ingrese un nombre.
-        </div>
-    
+        <input class="long" type="text" id="titulo" [(ngModel)]="title" required  #nombreInput="ngModel" />
+        
     </div>
-    <div>
-        <label for="texto">Texto:</label>
-        <input type="text" id="texto" [(ngModel)]="atext" required #textoInput="ngModel" />
-    </div>
-    <div>
+    <div class="bloque">
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" [(ngModel)]="afecha" required #fechaInput="ngModel"/>
     </div>
-    <div>
+    <div class="bloque">
         <label for="dir">URL:</label>
-        <input type="url" id="dir" [(ngModel)]="aurl" required #urlInput="ngModel"/>
+        <input class="long" type="url" id="dir" [(ngModel)]="aurl" required #urlInput="ngModel"/>
     </div>
-    <button (click)=guardar() *ngIf="!nombreInput.invalid && !textoInput.invalid && !fechaInput.invalid && !urlInput.invalid" >Guardar</button>
-
-   
+        <div class="contenido">
+            <label for="texto">Texto:</label>
+            <textarea rows="4" cols="80" id="texto" [(ngModel)]="atext" required #textoInput="ngModel"></textarea>
+          
+        </div>
+    
+    <div  *ngIf="nombreInput.invalid || textoInput.invalid || fechaInput.invalid || urlInput.invalid" class="error">
+      <p class="blinking">Por favor llene todos los campos para poder guardar.</p>
+    </div>
+    <div class="center">
+    <button class="boton" (click)=guardar() *ngIf="!nombreInput.invalid && !textoInput.invalid && !fechaInput.invalid && !urlInput.invalid" >Guardar</button>
+    </div>
+    
 </div>
+<hr>
 <div>
     <article *ngFor="let article of arrArticles">
-        <h3>{{article.titulo}}</h3>
-        <p>{{article.texto}}</p>
         <p>{{article.fecha}}</p>
-        <img [src]="article.url">
+        <h3>{{article.titulo}}</h3>
+        <img class="img-responsive"  [src]="article.url">
+        <p>{{article.texto}}</p>
+        <hr>
 
     </article>
 </div>
