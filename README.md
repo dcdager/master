@@ -10,7 +10,7 @@
 ]
 ```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli/`TEACHERID`) version 15.1.3.
+This project was generated with https://github.com/angular/angular-cli/`TEACHERID`
 
 ## Development server
 
