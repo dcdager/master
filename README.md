@@ -1,5 +1,5 @@
 ```json
-
+[
   {
     "id": 11,
     "first_name": "daniel",
@@ -7,6 +7,7 @@
     "username": "dcdager13",
     "email": "dcdage50@example.com"
   }
+]
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
