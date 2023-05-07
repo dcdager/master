@@ -10,7 +10,7 @@
 ]
 ```
 
-This project was generated with `https://github.com/angular/angular-cli/TEACHERID
+This project was generated with `https://github.com/angular/angular-cli/TEACHERID`
 
 ## Development server
 
